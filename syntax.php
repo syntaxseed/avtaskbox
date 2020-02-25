@@ -35,7 +35,7 @@ class syntax_plugin_avtaskbox extends DokuWiki_Syntax_Plugin
         return array(
             'author' => 'Sherri Wheeler',
             'email'  => 'Use my website: http://syntaxseed.com',
-            'date'   => '2013-02-25',
+            'date'   => '2020-02-07',
             'name'   => 'AV Task Box',
             'desc'   => 'Creates task/user story table boxes.',
             'url'	=> 'http://syntaxseed.com/project/avtaskbox/',
