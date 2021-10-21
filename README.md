@@ -1,5 +1,7 @@
 # DokuWiki Plugin: AVTaskBox
 
+<img src="example.png" border="0" />
+
 Generates nicely formatted boxes for describing project tasks or user stories.
 
 Install and documentation:
