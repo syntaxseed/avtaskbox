@@ -1,7 +1,8 @@
 <?php
+
 /**
  * DokuWiki task box plugin
- * @license    MIT (https://opensource.org/licenses/MIT)
+ * @license    GPL-2.0 (https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
  * @author     Sherri W. (http://syntaxseed.com)
  *
  * Usage:
@@ -38,7 +39,7 @@ class syntax_plugin_avtaskbox extends DokuWiki_Syntax_Plugin
             'date'   => '2020-02-07',
             'name'   => 'AV Task Box',
             'desc'   => 'Creates task/user story table boxes.',
-            'url'	=> 'http://syntaxseed.com/project/avtaskbox/',
+            'url'	=> 'https://www.dokuwiki.org/plugin:avtaskbox',
         );
     }
 

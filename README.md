@@ -7,7 +7,7 @@ Generates nicely formatted boxes for describing project tasks or user stories.
 Install and documentation:
 
 * https://www.dokuwiki.org/plugin:avtaskbox
-* Licence: MIT (https://opensource.org/licenses/MIT)
+* Licence: GPL-2.0 (https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 * Author: Sherri W. (https://syntaxseed.com)
 
 ## Usage
