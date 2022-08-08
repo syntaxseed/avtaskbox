@@ -1,8 +1,7 @@
 base   avtaskbox
 author Sherri Wheeler
 email  Twitter @SyntaxSeed or http://SyntaxSeed.com
-date   2020-02-07
+date   2022-08-08
 name   AV Task Box
 desc   Creates task/user story table boxes.
 url    https://www.dokuwiki.org/plugin:avtaskbox
-

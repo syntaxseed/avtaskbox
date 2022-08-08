@@ -22,3 +22,7 @@ ASSIGNED: Sherri
 DESCRIPTION: Some stuff for you. You can have newlines in this part. Description must be the last item.
 </task>
 ```
+
+## Changelog
+
+2022-08-08: Fix broken blank image in progress bar.

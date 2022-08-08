@@ -36,7 +36,7 @@ class syntax_plugin_avtaskbox extends DokuWiki_Syntax_Plugin
         return array(
             'author' => 'Sherri Wheeler',
             'email'  => 'Use my website: http://syntaxseed.com',
-            'date'   => '2020-02-07',
+            'date'   => '2022-08-08',
             'name'   => 'AV Task Box',
             'desc'   => 'Creates task/user story table boxes.',
             'url'	=> 'https://www.dokuwiki.org/plugin:avtaskbox',
@@ -87,6 +87,7 @@ class syntax_plugin_avtaskbox extends DokuWiki_Syntax_Plugin
           case DOKU_LEXER_UNMATCHED:
 
             $resultStr = '<table class="inline" width="500">';
+            $progbar = '';
 
             preg_match('/^Title:(.*?)$/isxm', $match, $matches);
             $title = (!empty($matches[1]) && strlen(trim($matches[1]))>0) ? trim($matches[1]) : '&nbsp;';
@@ -114,7 +115,10 @@ class syntax_plugin_avtaskbox extends DokuWiki_Syntax_Plugin
             }
             $sizeLeft = 100-$progress;
 
-            $progbar .= '<span style="margin-top:3px;padding:0;height:8px;width: 100px;">'.($progress<=0 ? '' : '<span style="margin:0;padding:0;background-color:#74a6c9; height:8px; width:'.$progress.'"><img src="'.rtrim(dirname($_SERVER['PHP_SELF']), "/").'/lib/images/blank.gif" height="8" width="'.$progress.'" border="0" title="'.$progress.'%" alt="'.$progress.'%" hspace="0" vspace="0" style="height:8px;" /></span>') . ($progress>=100 ? '' : '<span style="margin:0;padding:0;background-color: #dee7ec;height:8px;width:'.$sizeLeft.'"><img src="'.rtrim(dirname($_SERVER['PHP_SELF']), "/").'/lib/images/blank.gif" height="8" width="'.$sizeLeft.'" border="0" title="'.$progress.'%" alt="'.$progress.'%" hspace="0" vspace="0" style="height:8px;" /></span>') .'</span>';
+            $path = rtrim(dirname($_SERVER['PHP_SELF']), "/");
+            $blankImagePath = preg_replace('/doku\.php$/', '', $path) . 'lib/images/blank.gif';
+
+            $progbar .= '<span style="margin-top:3px;padding:0;height:8px;width: 100px;">' . ($progress <= 0 ? '' : '<span style="margin:0;padding:0;background-color:#74a6c9; height:8px; width:' . $progress . '"><img src="' . $blankImagePath . '" height="8" width="' . $progress . '" border="0" title="' . $progress . '%" alt="' . $progress . '%" hspace="0" vspace="0" style="height:8px;" /></span>') . ($progress >= 100 ? '' : '<span style="margin:0;padding:0;background-color: #dee7ec;height:8px;width:' . $sizeLeft . '"><img src="' . $blankImagePath . '" height="8" width="' . $sizeLeft . '" border="0" title="' . $progress . '%" alt="' . $progress . '%" hspace="0" vspace="0" style="height:8px;" /></span>') . '</span>';
 
             $resultStr .= '<tr class="row0"><th><b>'.$title.'</b><span style="float:right;font-weight:normal;">'.$assigned.'</span></th></tr>';
             $resultStr .= '<tr><td>'.nl2br($description).'</td></tr>';
