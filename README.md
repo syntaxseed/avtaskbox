@@ -25,4 +25,17 @@ DESCRIPTION: Some stuff for you. You can have newlines in this part. Description
 
 ## Changelog
 
-2022-08-08: Fix broken blank image in progress bar.
+* **2009-11-19**
+  * created plugin.
+
+* **2013-02-25**
+  * Fixed image url and minor layout bugs.
+  * Image fix by user monoceros84.
+  * Updated this wiki page to remove comments that have been fixed.
+
+* **2020-02-07**
+  * Update for PHP v 7+
+  * Add to GitHub repo.
+
+* **2022-08-08**
+  * Fix broken blank image in progress bar.
