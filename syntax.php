@@ -36,7 +36,7 @@ class syntax_plugin_avtaskbox extends DokuWiki_Syntax_Plugin
         return array(
             'author' => 'Sherri Wheeler',
             'email'  => 'Use my website: http://syntaxseed.com',
-            'date'   => '2022-08-08',
+            'date'   => '2026-06-16',
             'name'   => 'AV Task Box',
             'desc'   => 'Creates task/user story table boxes.',
             'url'	=> 'https://www.dokuwiki.org/plugin:avtaskbox',
@@ -90,22 +90,25 @@ class syntax_plugin_avtaskbox extends DokuWiki_Syntax_Plugin
             $progbar = '';
 
             preg_match('/^Title:(.*?)$/isxm', $match, $matches);
-            $title = (!empty($matches[1]) && strlen(trim($matches[1]))>0) ? trim($matches[1]) : '&nbsp;';
+            $title = (!empty($matches[1]) && strlen(trim($matches[1]))>0) ? hsc(trim($matches[1])) : '&nbsp;';
 
             preg_match('/^Priority:(.*?)$/isxm', $match, $matches);
-            $priority =(!empty($matches[1]) && strlen(trim($matches[1]))>0) ? 'Priority: '.trim($matches[1]) : '&nbsp;';
+            $priority =(!empty($matches[1]) && strlen(trim($matches[1]))>0) ? 'Priority: '.hsc(trim($matches[1])) : '&nbsp;';
+            $priority = hsc($priority);
 
             preg_match('/^Estimate:(.*?)$/isxm', $match, $matches);
-            $estimate = (!empty($matches[1]) && strlen(trim($matches[1]))>0) ? ' of '.trim($matches[1]) : '&nbsp;';
+            $estimate = (!empty($matches[1]) && strlen(trim($matches[1]))>0) ? ' of '.hsc(trim($matches[1])) : '&nbsp;';
+            $estimate = hsc($estimate);
 
             preg_match('/^Assigned:(.*?)$/isxm', $match, $matches);
-            $assigned = (!empty($matches[1]) && strlen(trim($matches[1]))>0) ? '('.trim($matches[1]).')' : '&nbsp;';
+            $assigned = (!empty($matches[1]) && strlen(trim($matches[1]))>0) ? '('.hsc(trim($matches[1])).')' : '&nbsp;';
+            $assigned = hsc($assigned);
 
             preg_match('/^Progress:(.*?)$/isxm', $match, $matches);
             $progress = (!empty($matches[1]) && strlen(trim($matches[1]))>0) ? intval(preg_replace('[^0-9]', '', $matches[1])) : '0';
 
             preg_match('/Description:(.*)/isx', $match, $matches);
-            $description = (!empty($matches[1]) && strlen(trim($matches[1]))>0) ? trim($matches[1]) : '&nbsp;';
+            $description = (!empty($matches[1]) && strlen(trim($matches[1]))>0) ? hsc(trim($matches[1])) : '&nbsp;';
 
             if ($progress<0) {
                 $progress=0;

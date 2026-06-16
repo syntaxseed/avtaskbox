@@ -39,3 +39,6 @@ DESCRIPTION: Some stuff for you. You can have newlines in this part. Description
 
 * **2022-08-08**
   * Fix broken blank image in progress bar.
+
+* **2026-06-16**
+  * Fix escaping bug.
